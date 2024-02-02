@@ -2,5 +2,10 @@ namespace HairSalon.Models;
 
   public class Stylist
   {
-    //properties here
+    public int StylistId { get; set; }
+    public string Name { get; set; }
+    public string Specialty { get; set; }
+    public int Rate { get; set; }
+    public string PhotoUrl { get; set; }
+    public List<Client> Clients { get; set; }
   }
