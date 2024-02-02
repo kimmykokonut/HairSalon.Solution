@@ -1,10 +1,12 @@
 @{
   Layout = "_Layout";
 }
-
 @model HairSalon.Models.Client
 
 <h4>Add a new client</h4>
+<p><span style="color:red">NOTE:</span> You need to have at least <em>one</em> stylist in the system before you can add a new client!</p>
+<p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
+
 @using (Html.BeginForm())
 {
   @Html.LabelFor(model => model.Name)

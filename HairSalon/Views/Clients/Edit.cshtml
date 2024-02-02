@@ -1,11 +1,10 @@
 @{
   Layout = "_Layout";
 }
-
 @model HairSalon.Models.Client
 
 <h2>Edit</h2>
-
+<hr />
 <h4>Edit this client: @Html.DisplayFor(model => model.Name)</h4>
 @using (Html.BeginForm())
 {
@@ -27,5 +26,4 @@
   @Html.DropDownList("StylistId")
   <br />
   <input type="submit" value="Update" class="btn btn-secondary" />
-
 }

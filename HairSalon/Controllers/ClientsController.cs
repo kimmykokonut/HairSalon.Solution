@@ -16,9 +16,7 @@ public class ClientsController : Controller
   }
   public ActionResult Index()
   {
-    List<Client> model = _db.Clients
-      .Include(client => client.Stylist)
-      .ToList();
+    List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
     return View(model);
   }
   public ActionResult Create()
@@ -29,15 +27,17 @@ public class ClientsController : Controller
   [HttpPost]
   public ActionResult Create(Client client)
   {
+    if (client.StylistId == 0)
+    {
+      return RedirectToAction("Create");
+    }
     _db.Clients.Add(client);
     _db.SaveChanges();
     return RedirectToAction("Index");
   }
   public ActionResult Details(int id)
   {
-    Client thisClient = _db.Clients
-    .Include(client => client.Stylist)
-    .FirstOrDefault(client => client.ClientId == id);
+    Client thisClient = _db.Clients.Include(client => client.Stylist).FirstOrDefault(client => client.ClientId == id);
     return View(thisClient);
   }
   public ActionResult Edit(int id)
