@@ -19,5 +19,8 @@
   @Html.LabelFor(model => model.Notes)
   @Html.TextBoxFor(model => model.Notes, new { required = "required" })
   <br />
-  <input type="submit" value="Create" />
+  @Html.LabelFor(model => model.Stylist)
+  @Html.DropDownList("StylistId")
+  <br />
+  <input type="submit" value="Create" class="btn btn-secondary" />
 }
