@@ -22,7 +22,7 @@ public class ClientsController : Controller
     return View();
   }
   [HttpPost]
-  public ActionResult Create (Client client)
+  public ActionResult Create(Client client)
   {
     _db.Clients.Add(client);
     _db.SaveChanges();
@@ -58,6 +58,4 @@ public class ClientsController : Controller
     _db.SaveChanges();
     return RedirectToAction("Index");
   }
-
-
 }
