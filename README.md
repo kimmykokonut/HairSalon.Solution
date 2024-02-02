@@ -45,6 +45,15 @@ _Currently not viewable on gh-pages. Please follow steps below to set up locally
 
 ----------------------------------
 **add in appsettings.json HERE***
+Setup instructions in the project's README.md that explain how to recreate the appsettings.json, including the location of file (within the project's production directory) and the contents of the file.
+
+And an appsetting.json with the following contents, replacing the following values with your own:
+
+    [YOUR-USER-HERE] with your username
+    [YOUR-PASSWORD-HERE] with your password
+    [YOUR-DB-NAME] with the name of your database
+    
+ProjectName.Solution/ProjectName/appsettings.json
 ----------------------------------
 
 8. In the .gitignore file, add `bin` and `obj` and save.
