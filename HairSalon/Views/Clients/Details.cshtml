@@ -10,3 +10,5 @@
 <h5>@Html.DisplayNameFor(model => model.Phone): @Html.DisplayFor(model => model.Phone)</h5>
 <h5>@Html.DisplayNameFor(model => model.Email): @Html.DisplayFor(model => model.Email)</h5>
 <h5>@Html.DisplayNameFor(model => model.Notes): @Html.DisplayFor(model => model.Notes)</h5>
+<hr />
+<p>@Html.ActionLink("Edit client", "Edit", new { id = Model.ClientId })</p>
