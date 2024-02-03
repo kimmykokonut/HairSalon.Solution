@@ -2,27 +2,29 @@
   Layout = "_Layout";
 }
 @model HairSalon.Models.Client
+<div class="container">
+  <h4>Add a new client</h4>
+  <p><span style="color:red">NOTE:</span> You need to have at least <em>one</em> stylist in the system before you can
+    add a new client!</p>
+  <p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
 
-<h4>Add a new client</h4>
-<p><span style="color:red">NOTE:</span> You need to have at least <em>one</em> stylist in the system before you can add a new client!</p>
-<p>Go to @Html.ActionLink("this page", "Create", "Stylists") to create a stylist.</p>
-
-@using (Html.BeginForm())
-{
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name, new { required = "required" })
-  <br />
-  @Html.LabelFor(model => model.Phone)
-  @Html.TextBoxFor(model => model.Phone, new { required = "required" })
-  <br />
-  @Html.LabelFor(model => model.Email)
-  @Html.TextBoxFor(model => model.Email, new { required = "required" })
-  <br />
-  @Html.LabelFor(model => model.Notes)
-  @Html.TextBoxFor(model => model.Notes, new { required = "required" })
-  <br />
-  @Html.LabelFor(model => model.Stylist)
-  @Html.DropDownList("StylistId")
-  <br />
-  <input type="submit" value="Create" class="btn btn-secondary" />
-}
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new { required = "required" })
+    <br />
+    @Html.LabelFor(model => model.Phone)
+    @Html.TextBoxFor(model => model.Phone, new { required = "required" })
+    <br />
+    @Html.LabelFor(model => model.Email)
+    @Html.TextBoxFor(model => model.Email, new { required = "required" })
+    <br />
+    @Html.LabelFor(model => model.Notes)
+    @Html.TextBoxFor(model => model.Notes, new { required = "required" })
+    <br />
+    @Html.LabelFor(model => model.Stylist)
+    @Html.DropDownList("StylistId")
+    <br />
+    <input type="submit" value="Create" class="btn btn-secondary" />
+  }
+</div>

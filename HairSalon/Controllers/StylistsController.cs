@@ -3,6 +3,8 @@ using HairSalon.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
+using System;
 
 namespace HairSalon.Controllers;
 
@@ -13,10 +15,17 @@ public class StylistsController : Controller
   {
     _db = db;
   }
-  public ActionResult Index()
+  public async Task<IActionResult> Index(string searchString)
   {
-    List<Stylist> model = _db.Stylists.ToList();
-    return View(model);
+    IQueryable<Stylist> model = from m in _db.Stylists
+                                  // .Include(client => client.Stylist)
+                                select m;
+
+    if (!String.IsNullOrEmpty(searchString))
+    {
+      model = model.Where(s => s.Name!.Contains(searchString));
+    }
+    return View(await model.ToListAsync());
   }
   public ActionResult Create()
   {
