@@ -28,6 +28,8 @@ _by Kim Robinson_
 * MVC Razor
 * ViewBag
 
+![SQL Design](/HairSalon/wwwroot/images/sql-design.png)
+
 ## Setup/Installation Requirements
 
 _Currently not viewable on gh-pages. Please follow steps below to set up locally_
