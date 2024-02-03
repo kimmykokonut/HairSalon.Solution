@@ -6,6 +6,8 @@ _by Kim Robinson_
 
 #### an MVC web application using MySql database and one to many relationships
 
+![Splash Page](/HairSalon/wwwroot/images/splash.png)
+
 ###  This app will allow a user to:
     - see a list of all stylists
     - select a stylist, see their details and see a list of all clients that belong to that stylist
@@ -176,6 +178,7 @@ HairSalon.Solution/HairSalon/appsettings.json
 1. While in the terminal, navigate to the project's production directory called "HairSalon" and type `$ dotnet build` to compile the application's code (this creates the bin folder).  Type `$ dotnet restore` to create the obj folder.
 
 ### Testing 
+I have not needed to do any business logic testing using EFCore, but have left the directory intact if you would like to add more functionality and create your own tests.
 - To use MSTest, you need to use the NuGet package manager to install the packages in the .csproj file.  Navigate to the HairSalon.Tests directory in the terminal and run the command `$ dotnet build`
 - To run tests using MSTest, navigate to the HairSalon.Tests directory in your terminal and type `$ dotnet test`
 
