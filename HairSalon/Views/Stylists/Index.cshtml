@@ -2,25 +2,28 @@
   Layout = "_Layout";
 }
 @using HairSalon.Models;
-
-<h1>Stylists</h1>
-<hr />
-@if (@Model.Count == 0)
-{
-  <h3>No stylists have been added yet!</h3>
-}
-else
-{
-  @foreach (Stylist stylist in Model)
+<div class="container mx-3">
+  <h1 class="text-left">Current Stylists</h1>
+  <hr />
+  @if (@Model.Count == 0)
   {
-    <div class="d-inline-flex p-2">
-  <div class="column">
-    <img src="@stylist.PhotoUrl" alt="stylist image url" height="200px" />
-    <h5 class="text-center">@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</h5>
+    <h3>No stylists have been added yet!</h3>
+  }
+  else
+  {
+    @foreach (Stylist stylist in Model)
+    {
+      <div class="d-inline-flex p-2">
+        <div class="column" id="stylist">
+          <img src="@stylist.PhotoUrl" alt="stylist image url" height="200px" />
+          <h5 class="text-center p-2">@Html.ActionLink($"{stylist.Name}", "Details", new { id = stylist.StylistId })</h5>
+        </div>
+      </div>
+    }
+  }
+  <div class="mt-3 mx-2">
+    <p>@Html.ActionLink("Add new stylist", "Create")</p>
+    <p>@Html.ActionLink("Add new client", "Create", "Clients")
   </div>
 </div>
-  }
-}
-<p>@Html.ActionLink("Add new stylist", "Create")</p>
-<p>@Html.ActionLink("Add new client", "Create", "Clients")
 </p>

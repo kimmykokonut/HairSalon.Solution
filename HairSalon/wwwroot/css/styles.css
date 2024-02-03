@@ -44,3 +44,7 @@ a {
   background-color: rgba(0, 0, 0, 0.143);
   transition: 0.3s;
 }
+
+#stylist {
+  border: 2px solid darkgray;
+}
