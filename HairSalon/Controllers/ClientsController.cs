@@ -20,7 +20,7 @@ public class ClientsController : Controller
   {
     IQueryable<Client> model = from m in _db.Clients
                             .Include(client => client.Stylist)
-                             select m;
+                               select m;
 
     if (!String.IsNullOrEmpty(searchString))
     {
@@ -28,11 +28,6 @@ public class ClientsController : Controller
     }
     return View(await model.ToListAsync());
   }
-  // public ActionResult Index()
-  // {
-  //   List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
-  //   return View(model);
-  // }
   public ActionResult Create()
   {
     ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");

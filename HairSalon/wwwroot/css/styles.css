@@ -4,19 +4,23 @@ body {
   font-family: 'Noto Sans', sans-serif;
   background-color: lightgray;
 }
+
 #homePage {
   margin: 7%;
 }
+
 #homePic {
   display: block;
   margin: auto;
   height: 40vh;
   border-radius: 15%;
 }
+
 a {
   color: purple;
   text-decoration: none;
 }
+
 #logo {
   display: block;
   width: 80vw;
@@ -25,6 +29,7 @@ a {
   margin-bottom: -2vw;
   margin-top: -2vw;
 }
+
 #navbar {
   display: flex;
   flex-direction: row;
@@ -33,6 +38,7 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
 .card {
   box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
   background-color: rgba(0, 0, 0, 0.143);
