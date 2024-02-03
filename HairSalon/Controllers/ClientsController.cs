@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Threading.Tasks;
+using System;
 
 namespace HairSalon.Controllers;
 
@@ -14,11 +16,23 @@ public class ClientsController : Controller
   {
     _db = db;
   }
-  public ActionResult Index()
+  public async Task<IActionResult> Index(string searchString)
   {
-    List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
-    return View(model);
+    IQueryable<Client> model = from m in _db.Clients
+                            .Include(client => client.Stylist)
+                             select m;
+
+    if (!String.IsNullOrEmpty(searchString))
+    {
+      model = model.Where(s => s.Name!.Contains(searchString));
+    }
+    return View(await model.ToListAsync());
   }
+  // public ActionResult Index()
+  // {
+  //   List<Client> model = _db.Clients.Include(client => client.Stylist).ToList();
+  //   return View(model);
+  // }
   public ActionResult Create()
   {
     ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
